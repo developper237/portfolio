@@ -112,7 +112,7 @@ nav ul li a:hover {
 }
 
 .project {
-    background: #fff;
+    background-image:url('https://www.bing.com/ck/a?!&&p=44b78be65e500cf2075223ef777786ee405378cfc6db388d1580f68402c4954aJmltdHM9MTczNDgyNTYwMA&ptn=3&ver=2&hsh=4&fclid=2aae4661-e892-60f9-15b7-522be9eb617a&u=a1L2ltYWdlcy9zZWFyY2g_cT1pbWFnZSUyMHByb2pldCZGT1JNPUlRRlJCQSZpZD01NjdBRDM3NTVGRDAyQjlBNjg4NDUyNUM0MzBGM0YxRDU2RENFQ0ZF&ntb=1');
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
