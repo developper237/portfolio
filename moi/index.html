@@ -14,6 +14,11 @@
     <header>
         <nav>
             <div class="logo">Mon Portfolio</div>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#a-propos">À Propos</a></li>
@@ -23,6 +28,7 @@
             </ul>
         </nav>
     </header>
+    
     
     <section id="accueil" class="hero">
         <div class="hero-content">
@@ -34,30 +40,30 @@
     </section>
     
     <section id="a-propos" class="about">
-        <h2>À Propos de Moi</h2><hr>
+        <h2>À Propos de Moi</h2>
         <p>Je suis un développeur passionné par la création de solutions innovantes et performantes. Spécialisé en développement Fullstack, je maîtrise les dernières technologies pour offrir des expériences utilisateurs exceptionnelles.</p>
     </section>
     
     <section id="projets" class="projects">
-        <h2>Mes Projets</h2><hr>
+        <h2>Mes Projets</h2>
         <div class="project-list">
             <div class="project">
-                <h3>E-commerce</h3><hr>
+                <h3>Projet 1</h3>
                 <p>Un site e-commerce responsive avec Vue.js.</p>
             </div>
             <div class="project">
-                <h3>collaboration</h3><hr>
+                <h3>Projet 2</h3>
                 <p>Un Site professionnel pour une entreprise de logistique.</p>
             </div>
             <div class="project">
-                <h3>Partenairiat</h3><hr>
+                <h3>Projet 3</h3>
                 <p>Un site pour Africa Global Logistics.</p>
             </div>
         </div>
     </section>
     
     <section id="competences" class="skills">
-        <h2>Mes Compétences</h2><hr>
+        <h2>Mes Compétences</h2>
         <ul>
             <li><i class="fab fa-html5"></i> HTML5</li>
             <li><i class="fab fa-css3-alt"></i> CSS3</li>
@@ -69,12 +75,16 @@
     
     <section id="contact" class="contact">
         <h2>Contactez-moi</h2>
-        <form  action="envoyer.php" method="POST">
-            <input type="text" placeholder="Votre Nom" id="nom">
-            <input type="email" placeholder="Votre Email" id="email" required>
-            <textarea placeholder="Votre Message" id="message"></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
+        <section id="contact" class="contact">
+            <h2>Contactez-moi</h2>
+            <form action="envoyer.php" method="POST">
+                <input type="text" name="nom" placeholder="Votre Nom" required>
+                <input type="email" name="email" placeholder="Votre Email" required>
+                <textarea name="message" placeholder="Votre Message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+        
     </section>
     
     <footer>
