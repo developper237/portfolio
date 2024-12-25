@@ -1,47 +1,35 @@
-// Fonctionnalités JavaScript pour un Portfolio Interactif
+// === Navigation fluide ===
+const navigationLinks = document.querySelectorAll('nav ul li a');
 
-// Effet de défilement fluide pour la navigation
-const navLinks = document.querySelectorAll('nav ul li a');
-navLinks.forEach(link => {
+navigationLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// Animation du texte de la section hero
+// === Animation du texte dans la section Hero ===
 const heroText = document.querySelector('.hero h1');
-let textArray = heroText.textContent.split('');
-heroText.textContent = '';
-textArray.forEach((letter, i) => {
-    setTimeout(() => {
-        heroText.textContent += letter;
-    }, i * 100);
-});
+if (heroText) {
+    let textArray = heroText.textContent.split('');
+    heroText.textContent = '';
+    textArray.forEach((letter, i) => {
+        setTimeout(() => {
+            heroText.textContent += letter;
+        }, i * 100);
+    });
+}
 
-// Dark Mode Toggle
-const toggleButton = document.createElement('button');
-toggleButton.textContent = '🌙 Mode Nuit';
-toggleButton.style.position = 'fixed';
-toggleButton.style.top = '10px';
-toggleButton.style.right = '10px';
-toggleButton.style.padding = '5px 10px';
-toggleButton.style.cursor = 'pointer';
-document.body.appendChild(toggleButton);
 
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-        toggleButton.textContent = '☀️ Mode Jour';
-    } else {
-        toggleButton.textContent = '🌙 Mode Nuit';
-    }
-});
 
-// Détection d'inactivité de l'utilisateur avec popup personnalisé
+// === Détection d'inactivité ===
 let inactivityTimer;
 function resetTimer() {
     clearTimeout(inactivityTimer);
@@ -70,7 +58,7 @@ function showCustomPopup() {
     });
 }
 
-// Animation au défilement des sections
+// === Animation au défilement ===
 const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
     sections.forEach(section => {
@@ -81,7 +69,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Ajout d'un bouton Retour en Haut
+// === Bouton Retour en Haut ===
 const scrollTopButton = document.createElement('button');
 scrollTopButton.textContent = '⬆️';
 scrollTopButton.style.position = 'fixed';
@@ -90,21 +78,18 @@ scrollTopButton.style.right = '20px';
 scrollTopButton.style.padding = '10px';
 scrollTopButton.style.display = 'none';
 scrollTopButton.style.cursor = 'pointer';
+scrollTopButton.style.zIndex = '1000';
 document.body.appendChild(scrollTopButton);
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-        scrollTopButton.style.display = 'block';
-    } else {
-        scrollTopButton.style.display = 'none';
-    }
+    scrollTopButton.style.display = (window.scrollY > 200) ? 'block' : 'none';
 });
 
 scrollTopButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Ajouter des boutons 'Visiter' aux projets avec des liens uniques
+// === Ajout des boutons "Visiter" aux projets ===
 const projectElements = document.querySelectorAll('.project');
 const projectLinks = [
     'https://e-computers-ten.vercel.app/',
@@ -128,5 +113,11 @@ projectElements.forEach((project, index) => {
     visitButton.style.cursor = 'pointer';
     project.appendChild(visitButton);
 });
+// script.js
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('nav ul');
 
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
