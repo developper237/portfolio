@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     
-    // Adresse email où tu souhaites recevoir les messages
     $destinataire = "sergende695@gmail.com";
     
     // Sujet du mail
